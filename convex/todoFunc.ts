@@ -58,3 +58,12 @@ export const getAllTodos = query({
       .collect();
   },
 });
+
+export const getEverything = query({
+  args: {},
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("todos")
+      .collect();
+  },
+});
