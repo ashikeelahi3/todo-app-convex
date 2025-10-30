@@ -47,8 +47,8 @@ The `convex dev` command will:
 Open a folder and in that folder open cmd or other terminal. You can use vs code or other code editor's terminal too. In that terminal, write the following command.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/todo-app.git
-cd todo-app
+git clone https://github.com/YOUR_USERNAME/todo-app-convex.git
+cd todo-app-convex
 ```
 
 Here `YOUR_USERNAME` is the username of your github profile.
@@ -70,6 +70,7 @@ npx convex dev
 ## Convex Data Types
 
 ### Available Types
+
 ```typescript
 import { v } from "convex/values";
 
@@ -100,7 +101,9 @@ v.union(v.string(), v.number())  // Either string or number
 ## Creating Data Tables
 
 ### 1. Define Schema
+
 Create `convex/schema.ts`:
+
 ```typescript
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
@@ -186,6 +189,7 @@ export const deleteTodo = mutation({
 ```
 
 ### Queries (Read Operations)
+
 ```typescript
 // Get filtered todos
 export const getTodos = query({
@@ -217,6 +221,7 @@ export const getAllTodos = query({
 ```
 
 ### Function Types
+
 - **Mutations**: Create, update, delete data
 - **Queries**: Read data (automatically cached)
 - **Args**: Type-safe parameters using Convex validators
@@ -224,24 +229,28 @@ export const getAllTodos = query({
 ## Function Explanations
 
 ### saveTodo
+
 - **Purpose**: Creates a new todo item in the database
 - **Parameters**: user_id, title, optional description, completion status
 - **Returns**: ID of the newly created todo
 - **Usage**: Call when user adds a new task
 
 ### updateTodo
+
 - **Purpose**: Modifies an existing todo by its ID
 - **Parameters**: todo ID and optional fields to update
 - **Logic**: Uses destructuring to separate ID from update fields
 - **Usage**: Call when user edits title, description, or marks complete
 
 ### deleteTodo
+
 - **Purpose**: Removes a todo from the database
 - **Parameters**: Only requires the todo ID
 - **Effect**: Permanently deletes the record
 - **Usage**: Call when user removes a task
 
 ### getTodos
+
 - **Purpose**: Retrieves todos for a user with optional filtering
 - **Parameters**: user_id (required), is_completed (optional)
 - **Logic**: Always filters by user_id, optionally by completion status
@@ -249,9 +258,8 @@ export const getAllTodos = query({
 - **Usage**: Get completed/incomplete todos or all with filtering
 
 ### getAllTodos
+
 - **Purpose**: Gets all todos for a specific user
 - **Parameters**: Only user_id
 - **Returns**: Complete list of user's todos
 - **Usage**: Display all tasks without filtering
-
-
