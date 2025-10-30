@@ -59,9 +59,26 @@ Here `YOUR_USERNAME` is the username of your github profile.
 pnpm install
 ```
 
-Create `.env.local` file in the root directory.
+If you are new in convex, you need to login in convex.
+
+```bash
+npx convex login
+```
+
+If you are a developer or an admin of my convex project, you need the `environmental variable` to access the database. If so, create `.env.local` file in the root directory. In that file use my environmental variables.
+
+```bash
+CONVEX_DEPLOYMENT= CONVEX_DEPLOYMENT_SECRET_KEY
+CONVEX_URL= CONVEX_URL_SECRET_KEY
+```
 
 Then run the following command to start the server.
+
+```bash
+npx convex dev
+```
+
+If you are not an admin or developer, just run the following command. It will create a new project in the convex.
 
 ```bash
 npx convex dev
