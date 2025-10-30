@@ -1,6 +1,6 @@
 # Todo App with Convex
 
-## How to Start
+## How to Start from scratch if you want to create a new project
 
 ### 1. Initialize Node.js Project
 
@@ -33,6 +33,39 @@ The `convex dev` command will:
 ### 5. Security Note
 
 ⚠️ **Important**: Never share or commit the `.env.local` file to version control.
+
+## Fork and Clone Repository (if you want to run my code)
+
+### 1. Fork the Repository
+
+- Go to the repository page on GitHub
+- Click the "Fork" button in the top-right corner
+- Select your GitHub account to fork to
+
+### 2. Clone Your Fork
+
+Open a folder and in that folder open cmd or other terminal. You can use vs code or other code editor's terminal too. In that terminal, write the following command.
+
+```bash
+git clone https://github.com/YOUR_USERNAME/todo-app.git
+cd todo-app
+```
+
+Here `YOUR_USERNAME` is the username of your github profile.
+
+### 3. Install Dependencies
+
+```bash
+pnpm install
+```
+
+Create `.env.local` file in the root directory.
+
+Then run the following command to start the server.
+
+```bash
+npx convex dev
+```
 
 ## Convex Data Types
 
@@ -220,3 +253,5 @@ export const getAllTodos = query({
 - **Parameters**: Only user_id
 - **Returns**: Complete list of user's todos
 - **Usage**: Display all tasks without filtering
+
+
